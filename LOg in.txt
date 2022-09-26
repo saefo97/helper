@@ -1,0 +1,160 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using Training.Classes;
+using Training.Screens;
+
+namespace Training.Scenes
+{
+    public partial class Primary : Form
+    {
+
+        public Master m;
+        public byte y = 0;
+
+        public void SignIn()
+        {
+            if (string.IsNullOrEmpty(userName.Text) && string.IsNullOrEmpty(password.Text))
+            {
+                MessageBox.Show("يرجى إدخال اسم مستخدم وكلمة مرور");
+            }
+            else if (string.IsNullOrEmpty(userName.Text))
+            {
+                MessageBox.Show("يرجى إدخال اسم مستخدم");
+            }
+            else if (string.IsNullOrEmpty(password.Text))
+            {
+                MessageBox.Show("يرجى إدخال كلمة المرور");
+            }
+            else
+            {
+                string a = AppsHelper.ReturnValue("select UserPassword from Users where UserName=N'" + userName.Text + "'");
+                string b = AppsHelper.ReturnValue("select UserRole from Users where UserName=N'" + userName.Text + "'");
+
+                if (string.IsNullOrEmpty(a))
+                {
+                    MessageBox.Show("يرجى التأكد من اسم المستخدم");
+                }else if(a!= password.Text)
+                {
+                    MessageBox.Show("يرجى التأكد من كلمة المرور");
+                }
+                else
+                {
+                    if (y == 0)
+                    {
+                        m = new Master();
+                    }
+                    else
+                    {
+                        y = 0;
+                    }
+
+                    m.user.Text = userName.Text;
+                    m.Show();
+                    this.Hide();
+
+                }
+
+            }
+
+        }
+
+        public void EncryptedSignIn()
+        {
+            if (string.IsNullOrEmpty(userName.Text) && string.IsNullOrEmpty(password.Text))
+            {
+                MessageBox.Show("يرجى إدخال اسم مستخدم وكلمة مرور");
+            }
+            else if (string.IsNullOrEmpty(userName.Text))
+            {
+                MessageBox.Show("يرجى إدخال اسم مستخدم");
+            }
+            else if (string.IsNullOrEmpty(password.Text))
+            {
+                MessageBox.Show("يرجى إدخال كلمة المرور");
+            }
+            else
+            {
+                string a = AppsHelper.ReturnValue("select UserPassword from Users where UserName=N'" + userName.Text + "'");
+                string b = AppsHelper.ReturnValue("select UserRole from Users where UserName=N'" + userName.Text + "'");
+                string c = AppsHelper.ReturnValue("select (CONVERT(nvarchar(50),HASHBYTES('MD5','" + password.Text + "'),2))");
+                if (string.IsNullOrEmpty(a))
+                {
+                    MessageBox.Show("يرجى التأكد من اسم المستخدم");
+                }
+                else if (a != c)
+                {
+                    MessageBox.Show("يرجى التأكد من كلمة المرور");
+                }
+                else
+                {
+                    if (y == 0)
+                    {
+                        m = new Master();
+                    }
+                    else
+                    {
+                        y = 0;
+                    }
+
+                    m.user.Text = userName.Text;
+                    m.Show();
+                    this.Hide();
+
+                }
+
+            }
+
+        }
+
+
+        public Primary()
+        {
+            InitializeComponent();
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            this.EncryptedSignIn();
+        }
+
+        private void UserName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                ActiveControl = password;
+            }
+        }
+
+        private void Password_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                this.SignIn();
+            }
+        }
+
+        private void CheckBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                password.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                password.UseSystemPasswordChar = true;
+            }
+        }
+    }
+}
