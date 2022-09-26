@@ -1,0 +1,237 @@
+E:\New folder (4)\School\School\bin\Debug\School.exe.config
+E:\New folder (4)\School\School\obj\Debug\School.csprojResolveAssemblyReference.cache
+E:\New folder (4)\School\School\obj\Debug\School.Properties.Resources.resources
+E:\New folder (4)\School\School\obj\Debug\School.csproj.GenerateResource.Cache
+E:\New folder (4)\School\School\bin\Debug\School.exe
+E:\New folder (4)\School\School\bin\Debug\School.pdb
+E:\New folder (4)\School\School\obj\Debug\School.exe
+E:\New folder (4)\School\School\obj\Debug\School.pdb
+E:\New folder (4)\School\School\obj\Debug\School.Primary.resources
+E:\New folder (4)\School\School\obj\Debug\School.Master.resources
+E:\New folder (4)\2\School\bin\Debug\School.exe.config
+E:\New folder (4)\2\School\obj\Debug\School.exe
+E:\New folder (4)\2\School\obj\Debug\School.pdb
+E:\New folder (4)\2\School\bin\Debug\School.exe
+E:\New folder (4)\2\School\bin\Debug\School.pdb
+E:\New folder (4)\2\School\obj\Debug\School.csprojResolveAssemblyReference.cache
+E:\New folder (4)\2\School\obj\Debug\School.Master.resources
+E:\New folder (4)\2\School\obj\Debug\School.Primary.resources
+E:\New folder (4)\2\School\obj\Debug\School.Properties.Resources.resources
+E:\New folder (4)\2\School\obj\Debug\School.csproj.GenerateResource.Cache
+E:\New folder (4)\3\School\bin\Debug\School.exe.config
+E:\New folder (4)\3\School\obj\Debug\School.exe
+E:\New folder (4)\3\School\obj\Debug\School.pdb
+E:\New folder (4)\3\School\bin\Debug\School.exe
+E:\New folder (4)\3\School\bin\Debug\School.pdb
+E:\New folder (4)\3\School\obj\Debug\School.csprojResolveAssemblyReference.cache
+E:\New folder (4)\3\School\obj\Debug\School.Master.resources
+E:\New folder (4)\3\School\obj\Debug\School.Password.resources
+E:\New folder (4)\3\School\obj\Debug\School.Primary.resources
+E:\New folder (4)\3\School\obj\Debug\School.Properties.Resources.resources
+E:\New folder (4)\3\School\obj\Debug\School.csproj.GenerateResource.Cache
+E:\New folder (4)\3\School\obj\Debug\School.History.resources
+E:\New folder (4)\3\School\obj\Debug\School.Roles.resources
+E:\New folder (4)\4\School\bin\Debug\School.exe.config
+E:\New folder (4)\4\School\obj\Debug\School.exe
+E:\New folder (4)\4\School\obj\Debug\School.pdb
+E:\New folder (4)\4\School\bin\Debug\School.exe
+E:\New folder (4)\4\School\bin\Debug\School.pdb
+E:\New folder (4)\4\School\obj\Debug\School.csprojResolveAssemblyReference.cache
+E:\New folder (4)\4\School\obj\Debug\School.History.resources
+E:\New folder (4)\4\School\obj\Debug\School.Master.resources
+E:\New folder (4)\4\School\obj\Debug\School.Password.resources
+E:\New folder (4)\4\School\obj\Debug\School.Primary.resources
+E:\New folder (4)\4\School\obj\Debug\School.Properties.Resources.resources
+E:\New folder (4)\4\School\obj\Debug\School.Roles.resources
+E:\New folder (4)\4\School\obj\Debug\School.csproj.GenerateResource.Cache
+E:\New folder (4)\5\School\bin\Debug\School.exe.config
+E:\New folder (4)\5\School\obj\Debug\School.exe
+E:\New folder (4)\5\School\obj\Debug\School.pdb
+E:\New folder (4)\5\School\bin\Debug\School.exe
+E:\New folder (4)\5\School\bin\Debug\School.pdb
+E:\New folder (4)\5\School\obj\Debug\School.csprojResolveAssemblyReference.cache
+E:\New folder (4)\5\School\obj\Debug\School.History.resources
+E:\New folder (4)\5\School\obj\Debug\School.Master.resources
+E:\New folder (4)\5\School\obj\Debug\School.Password.resources
+E:\New folder (4)\5\School\obj\Debug\School.Primary.resources
+E:\New folder (4)\5\School\obj\Debug\School.Properties.Resources.resources
+E:\New folder (4)\5\School\obj\Debug\School.Roles.resources
+E:\New folder (4)\5\School\obj\Debug\School.Students.resources
+E:\New folder (4)\5\School\obj\Debug\School.csproj.GenerateResource.Cache
+E:\New folder (4)\5\School\bin\Debug\Binarymission.WinForms.Controls.BinaryButtonSuite.dll
+E:\New folder (4)\6\School\bin\Debug\School.exe.config
+E:\New folder (4)\6\School\obj\Debug\School.exe
+E:\New folder (4)\6\School\obj\Debug\School.pdb
+E:\New folder (4)\6\School\bin\Debug\School.exe
+E:\New folder (4)\6\School\bin\Debug\School.pdb
+E:\New folder (4)\6\School\bin\Debug\Binarymission.WinForms.Controls.BinaryButtonSuite.dll
+E:\New folder (4)\6\School\obj\Debug\School.csprojResolveAssemblyReference.cache
+E:\New folder (4)\6\School\obj\Debug\School.History.resources
+E:\New folder (4)\6\School\obj\Debug\School.Master.resources
+E:\New folder (4)\6\School\obj\Debug\School.Password.resources
+E:\New folder (4)\6\School\obj\Debug\School.Prices.resources
+E:\New folder (4)\6\School\obj\Debug\School.Primary.resources
+E:\New folder (4)\6\School\obj\Debug\School.Properties.Resources.resources
+E:\New folder (4)\6\School\obj\Debug\School.Roles.resources
+E:\New folder (4)\6\School\obj\Debug\School.Students.resources
+E:\New folder (4)\6\School\obj\Debug\School.csproj.GenerateResource.Cache
+E:\New folder (4)\7\School\bin\Debug\School.exe.config
+E:\New folder (4)\7\School\obj\Debug\School.exe
+E:\New folder (4)\7\School\obj\Debug\School.pdb
+E:\New folder (4)\7\School\bin\Debug\School.exe
+E:\New folder (4)\7\School\bin\Debug\School.pdb
+E:\New folder (4)\7\School\bin\Debug\Binarymission.WinForms.Controls.BinaryButtonSuite.dll
+E:\New folder (4)\7\School\obj\Debug\School.csprojResolveAssemblyReference.cache
+E:\New folder (4)\7\School\obj\Debug\School.History.resources
+E:\New folder (4)\7\School\obj\Debug\School.Master.resources
+E:\New folder (4)\7\School\obj\Debug\School.Password.resources
+E:\New folder (4)\7\School\obj\Debug\School.Prices.resources
+E:\New folder (4)\7\School\obj\Debug\School.Primary.resources
+E:\New folder (4)\7\School\obj\Debug\School.Properties.Resources.resources
+E:\New folder (4)\7\School\obj\Debug\School.Roles.resources
+E:\New folder (4)\7\School\obj\Debug\School.Students.resources
+E:\New folder (4)\7\School\obj\Debug\School.csproj.GenerateResource.Cache
+E:\New folder (4)\8\School\bin\Debug\School.exe.config
+E:\New folder (4)\8\School\obj\Debug\School.exe
+E:\New folder (4)\8\School\obj\Debug\School.pdb
+E:\New folder (4)\8\School\bin\Debug\School.exe
+E:\New folder (4)\8\School\bin\Debug\School.pdb
+E:\New folder (4)\8\School\obj\Debug\School.csprojResolveAssemblyReference.cache
+E:\New folder (4)\8\School\obj\Debug\School.History.resources
+E:\New folder (4)\8\School\obj\Debug\School.Master.resources
+E:\New folder (4)\8\School\obj\Debug\School.Password.resources
+E:\New folder (4)\8\School\obj\Debug\School.Prices.resources
+E:\New folder (4)\8\School\obj\Debug\School.Primary.resources
+E:\New folder (4)\8\School\obj\Debug\School.Properties.Resources.resources
+E:\New folder (4)\8\School\obj\Debug\School.Roles.resources
+E:\New folder (4)\8\School\obj\Debug\School.Students.resources
+E:\New folder (4)\8\School\obj\Debug\School.csproj.GenerateResource.Cache
+E:\New folder (4)\9\School\bin\Debug\School.exe.config
+E:\New folder (4)\9\School\obj\Debug\School.exe
+E:\New folder (4)\9\School\obj\Debug\School.pdb
+E:\New folder (4)\9\School\bin\Debug\School.exe
+E:\New folder (4)\9\School\bin\Debug\School.pdb
+E:\New folder (4)\9\School\obj\Debug\School.csprojResolveAssemblyReference.cache
+E:\New folder (4)\9\School\obj\Debug\School.History.resources
+E:\New folder (4)\9\School\obj\Debug\School.Master.resources
+E:\New folder (4)\9\School\obj\Debug\School.Password.resources
+E:\New folder (4)\9\School\obj\Debug\School.Prices.resources
+E:\New folder (4)\9\School\obj\Debug\School.Primary.resources
+E:\New folder (4)\9\School\obj\Debug\School.Properties.Resources.resources
+E:\New folder (4)\9\School\obj\Debug\School.Roles.resources
+E:\New folder (4)\9\School\obj\Debug\School.Students.resources
+E:\New folder (4)\9\School\obj\Debug\School.csproj.GenerateResource.Cache
+E:\New folder (4)\10\School\bin\Debug\School.exe.config
+E:\New folder (4)\10\School\obj\Debug\School.exe
+E:\New folder (4)\10\School\obj\Debug\School.pdb
+E:\New folder (4)\10\School\bin\Debug\School.exe
+E:\New folder (4)\10\School\bin\Debug\School.pdb
+E:\New folder (4)\10\School\obj\Debug\School.csprojResolveAssemblyReference.cache
+E:\New folder (4)\10\School\obj\Debug\School.History.resources
+E:\New folder (4)\10\School\obj\Debug\School.Master.resources
+E:\New folder (4)\10\School\obj\Debug\School.Password.resources
+E:\New folder (4)\10\School\obj\Debug\School.Prices.resources
+E:\New folder (4)\10\School\obj\Debug\School.Primary.resources
+E:\New folder (4)\10\School\obj\Debug\School.Properties.Resources.resources
+E:\New folder (4)\10\School\obj\Debug\School.Roles.resources
+E:\New folder (4)\10\School\obj\Debug\School.Students.resources
+E:\New folder (4)\10\School\obj\Debug\School.csproj.GenerateResource.Cache
+E:\New folder (4)\10\School\obj\Debug\School.NewEditStudent.resources
+E:\New folder (4)\11\School\bin\Debug\School.exe.config
+E:\New folder (4)\11\School\obj\Debug\School.exe
+E:\New folder (4)\11\School\obj\Debug\School.pdb
+E:\New folder (4)\11\School\bin\Debug\School.exe
+E:\New folder (4)\11\School\bin\Debug\School.pdb
+E:\New folder (4)\11\School\obj\Debug\School.csprojResolveAssemblyReference.cache
+E:\New folder (4)\11\School\obj\Debug\School.History.resources
+E:\New folder (4)\11\School\obj\Debug\School.Master.resources
+E:\New folder (4)\11\School\obj\Debug\School.NewEditStudent.resources
+E:\New folder (4)\11\School\obj\Debug\School.Password.resources
+E:\New folder (4)\11\School\obj\Debug\School.Prices.resources
+E:\New folder (4)\11\School\obj\Debug\School.Primary.resources
+E:\New folder (4)\11\School\obj\Debug\School.Properties.Resources.resources
+E:\New folder (4)\11\School\obj\Debug\School.Roles.resources
+E:\New folder (4)\11\School\obj\Debug\School.Students.resources
+E:\New folder (4)\11\School\obj\Debug\School.csproj.GenerateResource.Cache
+E:\New folder (4)\11\School\obj\Debug\School.Form1.resources
+E:\New folder (4)\11\School\obj\Debug\School.Form2.resources
+E:\New folder (4)\12\School\bin\Debug\School.exe.config
+E:\New folder (4)\12\School\obj\Debug\School.exe
+E:\New folder (4)\12\School\obj\Debug\School.pdb
+E:\New folder (4)\12\School\bin\Debug\School.exe
+E:\New folder (4)\12\School\bin\Debug\School.pdb
+E:\New folder (4)\12\School\obj\Debug\School.csprojResolveAssemblyReference.cache
+E:\New folder (4)\12\School\obj\Debug\School.Form1.resources
+E:\New folder (4)\12\School\obj\Debug\School.Form2.resources
+E:\New folder (4)\12\School\obj\Debug\School.History.resources
+E:\New folder (4)\12\School\obj\Debug\School.Master.resources
+E:\New folder (4)\12\School\obj\Debug\School.NewEditStudent.resources
+E:\New folder (4)\12\School\obj\Debug\School.Password.resources
+E:\New folder (4)\12\School\obj\Debug\School.Prices.resources
+E:\New folder (4)\12\School\obj\Debug\School.Primary.resources
+E:\New folder (4)\12\School\obj\Debug\School.Properties.Resources.resources
+E:\New folder (4)\12\School\obj\Debug\School.Roles.resources
+E:\New folder (4)\12\School\obj\Debug\School.Students.resources
+E:\New folder (4)\12\School\obj\Debug\School.csproj.GenerateResource.Cache
+E:\New folder (4)\13\School\bin\Debug\School.exe.config
+E:\New folder (4)\13\School\obj\Debug\School.exe
+E:\New folder (4)\13\School\obj\Debug\School.pdb
+E:\New folder (4)\13\School\bin\Debug\School.exe
+E:\New folder (4)\13\School\bin\Debug\School.pdb
+E:\New folder (4)\13\School\obj\Debug\School.csprojResolveAssemblyReference.cache
+E:\New folder (4)\13\School\obj\Debug\School.Form1.resources
+E:\New folder (4)\13\School\obj\Debug\School.Form2.resources
+E:\New folder (4)\13\School\obj\Debug\School.History.resources
+E:\New folder (4)\13\School\obj\Debug\School.Master.resources
+E:\New folder (4)\13\School\obj\Debug\School.Mess.resources
+E:\New folder (4)\13\School\obj\Debug\School.NewEditStudent.resources
+E:\New folder (4)\13\School\obj\Debug\School.Password.resources
+E:\New folder (4)\13\School\obj\Debug\School.Prices.resources
+E:\New folder (4)\13\School\obj\Debug\School.Primary.resources
+E:\New folder (4)\13\School\obj\Debug\School.Properties.Resources.resources
+E:\New folder (4)\13\School\obj\Debug\School.Roles.resources
+E:\New folder (4)\13\School\obj\Debug\School.Students.resources
+E:\New folder (4)\13\School\obj\Debug\School.csproj.GenerateResource.Cache
+E:\New folder (4)\13\School\obj\Debug\School.Form3.resources
+E:\New folder (4)\14\School\bin\Debug\School.exe.config
+E:\New folder (4)\14\School\obj\Debug\School.exe
+E:\New folder (4)\14\School\obj\Debug\School.pdb
+E:\New folder (4)\14\School\bin\Debug\School.exe
+E:\New folder (4)\14\School\bin\Debug\School.pdb
+E:\New folder (4)\14\School\obj\Debug\School.csprojResolveAssemblyReference.cache
+E:\New folder (4)\14\School\obj\Debug\School.Form1.resources
+E:\New folder (4)\14\School\obj\Debug\School.Form2.resources
+E:\New folder (4)\14\School\obj\Debug\School.Form3.resources
+E:\New folder (4)\14\School\obj\Debug\School.History.resources
+E:\New folder (4)\14\School\obj\Debug\School.Master.resources
+E:\New folder (4)\14\School\obj\Debug\School.Mess.resources
+E:\New folder (4)\14\School\obj\Debug\School.NewEditStudent.resources
+E:\New folder (4)\14\School\obj\Debug\School.Password.resources
+E:\New folder (4)\14\School\obj\Debug\School.Prices.resources
+E:\New folder (4)\14\School\obj\Debug\School.Primary.resources
+E:\New folder (4)\14\School\obj\Debug\School.Properties.Resources.resources
+E:\New folder (4)\14\School\obj\Debug\School.Roles.resources
+E:\New folder (4)\14\School\obj\Debug\School.Students.resources
+E:\New folder (4)\14\School\obj\Debug\School.csproj.GenerateResource.Cache
+F:\STUDY\CPC\School\School\14\14\School\bin\Debug\School.exe.config
+F:\STUDY\CPC\School\School\14\14\School\bin\Debug\School.exe
+F:\STUDY\CPC\School\School\14\14\School\bin\Debug\School.pdb
+F:\STUDY\CPC\School\School\14\14\School\obj\Debug\School.csprojAssemblyReference.cache
+F:\STUDY\CPC\School\School\14\14\School\obj\Debug\School.Form1.resources
+F:\STUDY\CPC\School\School\14\14\School\obj\Debug\School.Form2.resources
+F:\STUDY\CPC\School\School\14\14\School\obj\Debug\School.Form3.resources
+F:\STUDY\CPC\School\School\14\14\School\obj\Debug\School.History.resources
+F:\STUDY\CPC\School\School\14\14\School\obj\Debug\School.Master.resources
+F:\STUDY\CPC\School\School\14\14\School\obj\Debug\School.Mess.resources
+F:\STUDY\CPC\School\School\14\14\School\obj\Debug\School.NewEditStudent.resources
+F:\STUDY\CPC\School\School\14\14\School\obj\Debug\School.Password.resources
+F:\STUDY\CPC\School\School\14\14\School\obj\Debug\School.Prices.resources
+F:\STUDY\CPC\School\School\14\14\School\obj\Debug\School.Primary.resources
+F:\STUDY\CPC\School\School\14\14\School\obj\Debug\School.Properties.Resources.resources
+F:\STUDY\CPC\School\School\14\14\School\obj\Debug\School.Roles.resources
+F:\STUDY\CPC\School\School\14\14\School\obj\Debug\School.Students.resources
+F:\STUDY\CPC\School\School\14\14\School\obj\Debug\School.csproj.GenerateResource.cache
+F:\STUDY\CPC\School\School\14\14\School\obj\Debug\School.csproj.CoreCompileInputs.cache
+F:\STUDY\CPC\School\School\14\14\School\obj\Debug\School.csproj.CopyComplete
+F:\STUDY\CPC\School\School\14\14\School\obj\Debug\School.exe
+F:\STUDY\CPC\School\School\14\14\School\obj\Debug\School.pdb
