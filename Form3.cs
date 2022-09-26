@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Mall
+namespace School
 {
     public partial class Form3 : Form
     {
@@ -25,7 +25,7 @@ namespace Mall
 
             AppsHelper.SetControl(@"SELECT        ToUser AS إلى, R AS الحالة
 FROM            MessRec
-WHERE        (MID = " + MID + ")", dataGridView1);
+WHERE        (MID = "+MID+")", dataGridView1);
         }
     }
 }

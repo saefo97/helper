@@ -8,14 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Mall
+namespace School
 {
     public partial class Primary : Form
     {
         public byte x = 0;
         public byte y = 0;
 
-        public Master mm;
+        public Master m;
 
         public static Primary p;
 
@@ -26,7 +26,7 @@ namespace Mall
 
         private void Primary_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (x == 0)
+            if (x==0)
             {
                 if (MessageBox.Show(
                 "هل أنت متأكد من أنك تود إغلاق البرنامج",
@@ -55,6 +55,8 @@ namespace Mall
         private void Primary_Load(object sender, EventArgs e)
         {
             p = this;
+
+            AppsHelper.SetSetting(@"SAEFO\SAEFO","School","sa", "saefomomo@gmail.com");
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -84,7 +86,7 @@ namespace Mall
             }
             else
             {
-                string a = AppsHelper.ReturnValue("select UserPassword from Users where UserName=N'" + textBox1.Text + "'");
+                string a = AppsHelper.ReturnValue("select UserPassword from Users where UserName=N'"+textBox1.Text+"'");
                 string b = AppsHelper.ReturnValue("select UserRole from Users where UserName=N'" + textBox1.Text + "'");
 
                 if (string.IsNullOrEmpty(a))
@@ -93,7 +95,7 @@ namespace Mall
                 }
                 else
                 {
-                    if (a != textBox2.Text)
+                    if (a!=textBox2.Text)
                     {
                         MessageBox.Show("الرجاء التأكد من كلمة المرور");
                     }
@@ -101,27 +103,30 @@ namespace Mall
                     {
                         if (y == 0)
                         {
-                            mm = new Master();
+                            m = new Master();
                         }
                         else
                         {
                             y = 0;
                         }
-                        mm.userName.Text = textBox1.Text;
-                        mm.userRole.Text = b;
-                        mm.Show();
+                        m.userName.Text = textBox1.Text;
+                        m.userRole.Text = b;
+                        m.Show();
                         AppsHelper.NewHistory(textBox1.Text, "تسجيل الدخول", "قام المستخدم بتسجيل الدخول إلى البرنامج");
                         this.Hide();
                     }
-
+                  
                 }
-
+            
             }
+
+
+           
         }
 
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == 13)
+            if (e.KeyChar==13)
             {
                 this.ActiveControl = textBox2;
             }
@@ -129,7 +134,7 @@ namespace Mall
 
         private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == 13)
+            if (e.KeyChar==13)
             {
                 this.SignIn();
             }

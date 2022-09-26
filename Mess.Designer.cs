@@ -1,4 +1,4 @@
-﻿namespace Mall
+﻿namespace School
 {
     partial class Mess
     {
@@ -198,6 +198,7 @@
             this.type.Name = "type";
             this.type.Size = new System.Drawing.Size(80, 25);
             this.type.SelectedIndexChanged += new System.EventHandler(this.type_SelectedIndexChanged);
+            this.type.Click += new System.EventHandler(this.Type_Click);
             // 
             // toolStripSeparator3
             // 

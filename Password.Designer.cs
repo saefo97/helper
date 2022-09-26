@@ -1,4 +1,4 @@
-﻿namespace Mall
+﻿namespace School
 {
     partial class Password
     {

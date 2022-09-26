@@ -8,8 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Mall
-
+namespace School
 {
     public partial class Mess : Form
     {
@@ -25,9 +24,9 @@ namespace Mall
 
             AppsHelper.EnableStyle(dataGridView1);
 
-            AppsHelper.SetControl("select UserName from Users", userName);
+            AppsHelper.SetControl("select UserName from Users",userName);
             userName.Items.Add("الكل");
-            userName.Items.Remove(Primary.p.mm.userName.Text);
+            userName.Items.Remove(Primary.p.m.userName.Text);
 
             type.Text = "وارد";
         }
@@ -35,19 +34,19 @@ namespace Mall
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
             string MID;
-            if (userName.Text != "الكل")
+            if (userName.Text!="الكل")
             {
-                AppsHelper.InsertQuery("Mess", "FromUser+" + Primary.p.mm.userName.Text, "ToUser+" + userName.Text, "Date+" + AppsHelper.GetNowDate_SQL(), "Time+" + AppsHelper.GetNowTime(), "Mes+" + MesText.Text);
-                MID = AppsHelper.ReturnValue("select max(MID) from Mess where FromUser=N'" + Primary.p.mm.userName.Text + "'");
-                AppsHelper.InsertQuery("MessRec", "MID+" + MID, "R+0", "ToUser+" + userName.Text);
+                AppsHelper.InsertQuery("Mess", "FromUser+" + Primary.p.m.userName.Text, "ToUser+" + userName.Text, "Date+" + AppsHelper.GetNowDate_SQL(), "Time+" + AppsHelper.GetNowTime(),"Mes+"+MesText.Text);
+                MID = AppsHelper.ReturnValue("select max(MID) from Mess where FromUser=N'"+ Primary.p.m.userName.Text + "'");
+                AppsHelper.InsertQuery("MessRec","MID+"+MID,"R+false","ToUser+"+userName.Text);
             }
             else
             {
-                AppsHelper.InsertQuery("Mess", "FromUser+" + Primary.p.mm.userName.Text, "ToUser+" + "الكل", "Date+" + AppsHelper.GetNowDate_SQL(), "Time+" + AppsHelper.GetNowTime(), "Mes+" + MesText.Text);
-                MID = AppsHelper.ReturnValue("select max(MID) from Mess where FromUser=N'" + Primary.p.mm.userName.Text + "'");
-                for (int i = 0; i < userName.Items.Count - 1; i++)
+                AppsHelper.InsertQuery("Mess", "FromUser+" + Primary.p.m.userName.Text, "ToUser+" + "الكل", "Date+" + AppsHelper.GetNowDate_SQL(), "Time+" + AppsHelper.GetNowTime(), "Mes+" + MesText.Text);
+                MID = AppsHelper.ReturnValue("select max(MID) from Mess where FromUser=N'" + Primary.p.m.userName.Text + "'");
+                for (int i = 0; i < userName.Items.Count-1; i++)
                 {
-                    AppsHelper.InsertQuery("MessRec", "MID+" + MID, "R+0", "ToUser+" + userName.Items[i].ToString());
+                    AppsHelper.InsertQuery("MessRec", "MID+" + MID, "R+false", "ToUser+" + userName.Items[i].ToString());
                 }
             }
             userName.SelectedIndex = -1;
@@ -57,19 +56,19 @@ namespace Mall
 
         private void type_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (type.Text == "وارد")
+            if (type.Text=="وارد")
             {
                 AppsHelper.SetControl(@"SELECT        Mess.MID, Mess.FromUser AS من, Mess.ToUser AS إلى, Mess.Date AS التاريخ, Mess.Time AS الساعة, Mess.Mes AS الرسالة
 FROM            Mess INNER JOIN
                          MessRec ON Mess.MID = MessRec.MID
-WHERE        (MessRec.ToUser = N'" + Primary.p.mm.userName.Text + "') AND (Mess.Date >= '" + DateTime.Parse(fromDate.Text).ToString("yyyy/MM/dd") + "' and Mess.Date <= '" + DateTime.Parse(toDate.Text).ToString("yyyy/MM/dd") + "')", dataGridView1);
+WHERE        (MessRec.ToUser = N'"+Primary.p.m.userName.Text+"') AND (Mess.Date >= '"+DateTime.Parse(fromDate.Text).ToString("yyyy/MM/dd")+"' and Mess.Date <= '"+ DateTime.Parse(toDate.Text).ToString("yyyy/MM/dd") + "')", dataGridView1);
 
 
 
                 AppsHelper.SendQuery(@"update    MessRec     
-set MessRec.R=1 from Mess INNER JOIN MessRec 
+set MessRec.R='true' from Mess INNER JOIN MessRec 
 ON Mess.MID = MessRec.MID 
-WHERE        (MessRec.ToUser = N'" + Primary.p.mm.userName.Text + "') AND (Mess.Date >= '" + DateTime.Parse(fromDate.Text).ToString("yyyy/MM/dd") + "' and Mess.Date <= '" + DateTime.Parse(toDate.Text).ToString("yyyy/MM/dd") + "')");
+WHERE        (MessRec.ToUser = N'" + Primary.p.m.userName.Text + "') AND (Mess.Date >= '" + DateTime.Parse(fromDate.Text).ToString("yyyy/MM/dd") + "' and Mess.Date <= '" + DateTime.Parse(toDate.Text).ToString("yyyy/MM/dd") + "')");
 
 
             }
@@ -114,6 +113,11 @@ WHERE         (Mess.Date >= '" + DateTime.Parse(fromDate.Text).ToString("yyyy/MM
             Form3 f3 = new Form3();
             f3.MID = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
             f3.ShowDialog();
+        }
+
+        private void Type_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

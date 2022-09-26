@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Mall
+namespace School
 {
     public partial class Password : Form
     {
@@ -60,29 +60,29 @@ namespace Mall
 
         public void save()
         {
-            if (string.IsNullOrEmpty(textBox1.Text) ||
-                string.IsNullOrEmpty(textBox2.Text) ||
+            if (string.IsNullOrEmpty(textBox1.Text) || 
+                string.IsNullOrEmpty(textBox2.Text) || 
                 string.IsNullOrEmpty(textBox3.Text))
             {
                 MessageBox.Show("الرجاء ملئ كافة الخانات");
             }
             else
             {
-                string a = Primary.p.mm.userName.Text;
-                string b = AppsHelper.ReturnValue("select UserPassword from Users where UserName=N'" + a + "'");
-                if (textBox1.Text != b)
+                string a = Primary.p.m.userName.Text;
+                string b = AppsHelper.ReturnValue("select UserPassword from Users where UserName=N'"+a+"'");
+                if (textBox1.Text!=b)
                 {
                     MessageBox.Show("كلمة المرور القديمة خاطئة");
                 }
                 else
                 {
-                    if (textBox2.Text != textBox3.Text)
+                    if (textBox2.Text!=textBox3.Text)
                     {
                         MessageBox.Show("لا يوجد مطابقة بين كلمة المرور الجديدة وتاكيد كلمة المرور");
                     }
                     else
                     {
-                        AppsHelper.UpdateQuery("Users", "UserPassword+" + textBox2.Text, "UserName+" + a);
+                        AppsHelper.UpdateQuery("Users", "UserPassword+"+textBox2.Text, "UserName+"+a);
                         MessageBox.Show("تم تغيير كلمة المرور بنجاح");
                         this.Close();
                     }
@@ -97,7 +97,7 @@ namespace Mall
 
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == 13)
+            if (e.KeyChar==13)
             {
                 this.ActiveControl = textBox2;
             }
@@ -105,7 +105,7 @@ namespace Mall
 
         private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == 13)
+            if (e.KeyChar==13)
             {
                 this.ActiveControl = textBox3;
             }
@@ -113,7 +113,7 @@ namespace Mall
 
         private void textBox3_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == 13)
+            if (e.KeyChar==13)
             {
                 this.save();
             }

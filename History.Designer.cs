@@ -1,4 +1,4 @@
-﻿namespace Mall
+﻿namespace School
 {
     partial class History
     {
@@ -30,11 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(History));
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
-            this.toolStripLabel5 = new System.Windows.Forms.ToolStripLabel();
-            this.fromDate = new System.Windows.Forms.ToolStripTextBox();
-            this.toolStripLabel4 = new System.Windows.Forms.ToolStripLabel();
-            this.toDate = new System.Windows.Forms.ToolStripTextBox();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.userName = new System.Windows.Forms.ToolStripComboBox();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
@@ -46,6 +41,11 @@
             this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
             this.searchBox = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripLabel5 = new System.Windows.Forms.ToolStripLabel();
+            this.fromDate = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripLabel4 = new System.Windows.Forms.ToolStripLabel();
+            this.toDate = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.statusStrip2 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel5 = new System.Windows.Forms.ToolStripStatusLabel();
             this.a = new System.Windows.Forms.ToolStripStatusLabel();
@@ -79,45 +79,6 @@
             this.toolStrip2.Size = new System.Drawing.Size(843, 29);
             this.toolStrip2.TabIndex = 3;
             this.toolStrip2.Text = "toolStrip2";
-            // 
-            // toolStripLabel5
-            // 
-            this.toolStripLabel5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.toolStripLabel5.Margin = new System.Windows.Forms.Padding(2);
-            this.toolStripLabel5.Name = "toolStripLabel5";
-            this.toolStripLabel5.Size = new System.Drawing.Size(49, 25);
-            this.toolStripLabel5.Text = "من تاريخ";
-            // 
-            // fromDate
-            // 
-            this.fromDate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.fromDate.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.fromDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 4);
-            this.fromDate.Name = "fromDate";
-            this.fromDate.Size = new System.Drawing.Size(100, 23);
-            this.fromDate.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // toolStripLabel4
-            // 
-            this.toolStripLabel4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.toolStripLabel4.Margin = new System.Windows.Forms.Padding(2);
-            this.toolStripLabel4.Name = "toolStripLabel4";
-            this.toolStripLabel4.Size = new System.Drawing.Size(51, 25);
-            this.toolStripLabel4.Text = "إلى تاريخ";
-            // 
-            // toDate
-            // 
-            this.toDate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.toDate.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.toDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 4);
-            this.toDate.Name = "toDate";
-            this.toDate.Size = new System.Drawing.Size(100, 23);
-            this.toDate.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 29);
             // 
             // toolStripLabel1
             // 
@@ -208,6 +169,45 @@
             this.toolStripSeparator4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 4);
             this.toolStripSeparator4.Name = "toolStripSeparator4";
             this.toolStripSeparator4.Size = new System.Drawing.Size(6, 23);
+            // 
+            // toolStripLabel5
+            // 
+            this.toolStripLabel5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.toolStripLabel5.Margin = new System.Windows.Forms.Padding(2);
+            this.toolStripLabel5.Name = "toolStripLabel5";
+            this.toolStripLabel5.Size = new System.Drawing.Size(49, 25);
+            this.toolStripLabel5.Text = "من تاريخ";
+            // 
+            // fromDate
+            // 
+            this.fromDate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.fromDate.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.fromDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 4);
+            this.fromDate.Name = "fromDate";
+            this.fromDate.Size = new System.Drawing.Size(100, 23);
+            this.fromDate.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // toolStripLabel4
+            // 
+            this.toolStripLabel4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.toolStripLabel4.Margin = new System.Windows.Forms.Padding(2);
+            this.toolStripLabel4.Name = "toolStripLabel4";
+            this.toolStripLabel4.Size = new System.Drawing.Size(51, 25);
+            this.toolStripLabel4.Text = "إلى تاريخ";
+            // 
+            // toDate
+            // 
+            this.toDate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.toDate.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.toDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 4);
+            this.toDate.Name = "toDate";
+            this.toDate.Size = new System.Drawing.Size(100, 23);
+            this.toDate.TextBoxTextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 29);
             // 
             // statusStrip2
             // 

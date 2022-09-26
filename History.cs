@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Mall
+namespace School
 {
     public partial class History : Form
     {
@@ -22,9 +22,9 @@ namespace Mall
             fromDate.Text = AppsHelper.GetNowDate();
             toDate.Text = AppsHelper.GetNowDate();
 
-            AppsHelper.SetControl("select userName from Users", userName);
+            AppsHelper.SetControl("select userName from Users",userName);
             userName.Items.Add("الكل");
-            AppsHelper.SetControl("select distinct(K) from history", type);
+            AppsHelper.SetControl("select distinct(K) from history",type);
             type.Items.Add("الكل");
 
             AppsHelper.EnableStyle(dataGridView1);
@@ -89,7 +89,7 @@ WHERE         (Date >= '" + DateTime.Parse(fromDate.Text).ToString("yyyy/MM/dd")
                 {
                     AppsHelper.SetControl(@"SELECT        UserName AS [اسم المستخدم], Date AS التاريخ, Time AS الساعة, K AS [نوع العملية], Details AS [تفاصيل العملية]
 FROM            History
-WHERE         (Date >= '" + DateTime.Parse(fromDate.Text).ToString("yyyy/MM/dd") + "' AND Date <= '" + DateTime.Parse(toDate.Text).ToString("yyyy/MM/dd") + "') AND (K = N'" + type.Text + "') AND (UserName = N'" + userName.Text + "') and Details like N'%" + searchBox.Text + "%'", dataGridView1);
+WHERE         (Date >= '" + DateTime.Parse(fromDate.Text).ToString("yyyy/MM/dd") + "' AND Date <= '" + DateTime.Parse(toDate.Text).ToString("yyyy/MM/dd") + "') AND (K = N'" + type.Text + "') AND (UserName = N'" + userName.Text + "') and Details like N'%"+searchBox.Text+"%'", dataGridView1);
                 }
                 else//مستخدم كافة العمليات
                 {
@@ -107,7 +107,7 @@ WHERE         (Date >= '" + DateTime.Parse(fromDate.Text).ToString("yyyy/MM/dd")
 
                     AppsHelper.SetControl(@"SELECT        UserName AS [اسم المستخدم], Date AS التاريخ, Time AS الساعة, K AS [نوع العملية], Details AS [تفاصيل العملية]
 FROM            History
-WHERE         (Date >= '" + DateTime.Parse(fromDate.Text).ToString("yyyy/MM/dd") + "' AND Date <= '" + DateTime.Parse(toDate.Text).ToString("yyyy/MM/dd") + "') AND (K = N'" + type.Text + "') and Details like N'%" + searchBox.Text + "%'", dataGridView1);
+WHERE         (Date >= '" + DateTime.Parse(fromDate.Text).ToString("yyyy/MM/dd") + "' AND Date <= '" + DateTime.Parse(toDate.Text).ToString("yyyy/MM/dd") + "') AND (K = N'" + type.Text + "') and Details like N'%"+searchBox.Text+"%'", dataGridView1);
 
                 }
                 else//كافة المستخدمين كافة العمليات
@@ -148,6 +148,8 @@ WHERE         (Date >= '" + DateTime.Parse(fromDate.Text).ToString("yyyy/MM/dd")
             }
             catch
             {
+
+              
             }
         }
 
