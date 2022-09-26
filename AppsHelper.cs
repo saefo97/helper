@@ -17,113 +17,20 @@ using GsmComm.Interfaces;
 using GsmComm.Server;
 using System.IO;
 using System.IO.Ports;
-using eiad=Microsoft.Office.Interop.Excel;
+using eiad = Microsoft.Office.Interop.Excel;
 using Word = Microsoft.Office.Interop.Word;
 using ZXing;
 using Gma.QrCodeNet.Encoding.Windows.Forms;
+using System.Globalization;
 
 namespace Mall
 {
     static class AppsHelper
     {
-        public static void Insert_Image(string path, string PID)
-        {
-            SqlConnection connection = new SqlConnection();
-            connection.ConnectionString = cs;
-            FileStream fs;
-            fs = new FileStream(@path, FileMode.Open, FileAccess.Read);
-            byte[] picbyte = new byte[fs.Length];
-            fs.Read(picbyte, 0, System.Convert.ToInt32(fs.Length));
-            fs.Close();
-            connection.Open();
-            string query;
-            query = "update Products set pic=@pic where PID="+PID;
-            SqlParameter picparameter = new SqlParameter();
-            picparameter.SqlDbType = SqlDbType.Image;
-            picparameter.ParameterName = "pic";
-            picparameter.Value = picbyte;
-            SqlCommand cmd = new SqlCommand(query, connection);
-            cmd.Parameters.Add(picparameter);
-            cmd.ExecuteNonQuery();
-            connection.Close();
-
-        }
-        public static void Read_Image1(string query, PictureBox p)
-        {
-            try
-            {
-                SqlConnection connection = new SqlConnection();
-                connection.ConnectionString = cs;
-                p.SizeMode = PictureBoxSizeMode.StretchImage;
-                SqlCommand cc = new SqlCommand(query, connection);
-                SqlDataAdapter adapter = new SqlDataAdapter(cc);
-                DataSet ds = new DataSet("MyImages");
-                byte[] MyData = new byte[0];
-                adapter.Fill(ds, "MyImages");
-                DataRow myRow;
-                myRow = ds.Tables["MyImages"].Rows[0];
-                MyData = (byte[])myRow["Pic"];
-                MemoryStream stream = new MemoryStream(MyData);
-                p.Image = Image.FromStream(stream);
-
-
-            }
-            catch (Exception ex)
-            {
-                //MessageBox.Show(ex.Message);
-            }
-        }
-        public static void Read_Image2(string query, PictureBox p)
-        {
-            try
-            {
-                SqlConnection connection = new SqlConnection();
-                connection.ConnectionString = cs;
-                p.SizeMode = PictureBoxSizeMode.StretchImage;
-                SqlCommand cc = new SqlCommand(query, connection);
-                SqlDataAdapter adapter = new SqlDataAdapter(cc);
-                DataSet ds = new DataSet("MyImages");
-                byte[] MyData = new byte[0];
-                adapter.Fill(ds, "MyImages");
-                DataRow myRow;
-                myRow = ds.Tables["MyImages"].Rows[0];
-                MyData = (byte[])myRow["Pic2"];
-                MemoryStream stream = new MemoryStream(MyData);
-                p.Image = Image.FromStream(stream);
-
-
-            }
-            catch
-            {
-            }
-        }
-        public static void Insert_Image2(string path, string PID)
-        {
-            SqlConnection connection = new SqlConnection();
-            connection.ConnectionString = cs;
-            FileStream fs;
-            fs = new FileStream(@path, FileMode.Open, FileAccess.Read);
-            byte[] picbyte = new byte[fs.Length];
-            fs.Read(picbyte, 0, System.Convert.ToInt32(fs.Length));
-            fs.Close();
-            connection.Open();
-            string query;
-            query = "update Products set pic2=@pic2 where PID=" + PID;
-            SqlParameter picparameter = new SqlParameter();
-            picparameter.SqlDbType = SqlDbType.Image;
-            picparameter.ParameterName = "pic2";
-            picparameter.Value = picbyte;
-            SqlCommand cmd = new SqlCommand(query, connection);
-            cmd.Parameters.Add(picparameter);
-            cmd.ExecuteNonQuery();
-            connection.Close();
-
-        }
-
         public static string userName;
 
         public static string cs = @"Server=SAEFO\SAEFO ; DataBase=Mall ; User ID=sa ; PassWord=saefomomo@gmail.com";
-        public static void SetControl(string query,object o,params string[] WithOut)
+        public static void SetControl(string query, object o, params string[] WithOut)
         {
             SqlConnection con = new SqlConnection();
             con.ConnectionString = cs;
@@ -154,9 +61,9 @@ namespace Mall
                 dgv.DataSource = dt;
 
                 int space1 = query.IndexOf(" ");
-                int space2 = query.IndexOf(" ",space1+1);
-                int space3 = query.IndexOf(" ",space2+1);
-                string tableName = query.Substring(space3+1,query.Length-space3-1);
+                int space2 = query.IndexOf(" ", space1 + 1);
+                int space3 = query.IndexOf(" ", space2 + 1);
+                string tableName = query.Substring(space3 + 1, query.Length - space3 - 1);
 
                 for (int i = 0; i < dgv.Columns.Count; i++)
                 {
@@ -179,20 +86,19 @@ WHERE
                             }
                             dgv.Columns[i].DefaultCellStyle.Format = "N0";
                         }
-                        end:;
+                    end:;
                     }
                     catch
                     {
 
-                       
+
                     }
-                 
+
                 }
 
 
                 ToolTipController x = new ToolTipController();
-                x.SetTitle(dgv, "CPC");
-                x.SetToolTip(dgv, "eiad arja");
+                x.SetTitle(dgv, "SAEFO");
 
 
             }
@@ -300,9 +206,9 @@ WHERE
                 dgv[i].RowHeadersVisible = false;
                 dgv[i].TabIndex = 0;
             }
-          
+
         }
-        public static void WithDecimal(string t,object o)
+        public static void WithDecimal(string t, object o)
         {
             try
             {
@@ -397,12 +303,12 @@ WHERE
                     try
                     {
                         decimal x = decimal.Parse(t.Text);
-                        t.Text = string.Format("{0:N0}",x);
+                        t.Text = string.Format("{0:N0}", x);
                     }
                     catch
                     {
 
-                   
+
                     }
                 }
             }
@@ -441,7 +347,7 @@ WHERE
 
 
 
-           
+
         }
         private static void SmartCode(object sender, EventArgs e)
         {
@@ -477,7 +383,7 @@ WHERE
         static byte x = 0;
         public static void Just(params TextBox[] tbs)
         {
-           
+
 
             for (int i = 0; i < tbs.Length; i++)
             {
@@ -503,8 +409,8 @@ WHERE
             switch (x)
             {
                 case 0:
-                    if ((e.KeyChar<65 || (e.KeyChar>90 && e.KeyChar<97) || e.KeyChar>122)
-                        && e.KeyChar!=13
+                    if ((e.KeyChar < 65 || (e.KeyChar > 90 && e.KeyChar < 97) || e.KeyChar > 122)
+                        && e.KeyChar != 13
                         && e.KeyChar != 8
                         && e.KeyChar != 32
                         )
@@ -514,13 +420,13 @@ WHERE
                     ; break;
                 case 1:
 
-                    if (e.KeyChar==1571 || e.KeyChar==1573 || e.KeyChar==1570)
+                    if (e.KeyChar == 1571 || e.KeyChar == 1573 || e.KeyChar == 1570)
                     {
                         e.KeyChar = (char)1575;
                     }
 
 
-                    if ((e.KeyChar<1575 || e.KeyChar>1610)
+                    if ((e.KeyChar < 1575 || e.KeyChar > 1610)
                         && e.KeyChar != 13
                         && e.KeyChar != 8
                         && e.KeyChar != 32
@@ -533,7 +439,7 @@ WHERE
 
                 case 2:
 
-                    if (e.KeyChar>=65 && e.KeyChar<=90)
+                    if (e.KeyChar >= 65 && e.KeyChar <= 90)
                     {
                         e.KeyChar = (char)(e.KeyChar + 32);
                     }
@@ -595,7 +501,7 @@ WHERE
                     }
                     ; break;
             }
-            
+
         }
         public static bool Check(Panel p)
         {
@@ -603,7 +509,7 @@ WHERE
 
             string mes = "";
 
-            string[] x = new string[p.Controls.Count/2];
+            string[] x = new string[p.Controls.Count / 2];
 
             TextBox te;
             ComboBox cb;
@@ -613,13 +519,13 @@ WHERE
                 if (p.Controls[i] is TextBox)
                 {
                     te = ((TextBox)p.Controls[i]);
-                    if (te.Tag!= null && string.IsNullOrEmpty(te.Text))
+                    if (te.Tag != null && string.IsNullOrEmpty(te.Text))
                     {
-                            int score = te.Tag.ToString().IndexOf("-");
-                            int num = int.Parse(te.Tag.ToString().Substring(0, score));
-                            string word = te.Tag.ToString().Substring(score + 1, te.Tag.ToString().Length - score-1);
-                            x[num] = word;
-                            v++;
+                        int score = te.Tag.ToString().IndexOf("-");
+                        int num = int.Parse(te.Tag.ToString().Substring(0, score));
+                        string word = te.Tag.ToString().Substring(score + 1, te.Tag.ToString().Length - score - 1);
+                        x[num] = word;
+                        v++;
                     }
                 }
                 else if (p.Controls[i] is ComboBox)
@@ -627,28 +533,28 @@ WHERE
                     cb = ((ComboBox)p.Controls[i]);
                     if (!string.IsNullOrEmpty(cb.Tag.ToString()) && string.IsNullOrEmpty(cb.Text))
                     {
-                            int score = cb.Tag.ToString().IndexOf("-");
-                            int num = int.Parse(cb.Tag.ToString().Substring(0, score));
-                            string word = cb.Tag.ToString().Substring(score + 1, cb.Tag.ToString().Length - score-1);
-                            x[num] = word;
-                            v++;
+                        int score = cb.Tag.ToString().IndexOf("-");
+                        int num = int.Parse(cb.Tag.ToString().Substring(0, score));
+                        string word = cb.Tag.ToString().Substring(score + 1, cb.Tag.ToString().Length - score - 1);
+                        x[num] = word;
+                        v++;
                     }
                 }
             }
 
-            if (v==0)
+            if (v == 0)
             {
                 return true;
             }
             else
             {
-                if (v>1)
+                if (v > 1)
                 {
                     mes += (":" + "الرجاء ملئ الخانات التالية" + "\n");
                 }
-                else if (v==1)
+                else if (v == 1)
                 {
-                    mes += (  "الرجاء ملئ الخانة التالية" + ":" + " ");
+                    mes += ("الرجاء ملئ الخانة التالية" + ":" + " ");
                 }
                 for (int i = 0; i < x.Length; i++)
                 {
@@ -661,7 +567,7 @@ WHERE
                         }
                     }
                 }
-                MessageBox.Show(mes,"رسالة تنبيه",MessageBoxButtons.OK,MessageBoxIcon.Warning,MessageBoxDefaultButton.Button1,MessageBoxOptions.RightAlign);
+                MessageBox.Show(mes, "رسالة تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign);
                 return false;
             }
         }
@@ -798,7 +704,7 @@ WHERE
                 MessageBox.Show("E60");
             }
         }
-        public static void InsertQuery(string TableName,params string[] x)
+        public static void InsertQuery(string TableName, params string[] x)
         {
             try
             {
@@ -806,16 +712,16 @@ WHERE
                 string columnValue;
                 string columnType;
                 int plus;
-            string query = "insert into "+TableName+" (";
+                string query = "insert into " + TableName + " (";
 
                 for (int i = 0; i < x.Length; i++)
                 {
                     plus = x[i].IndexOf("+");
-                    columnName = x[i].Substring(0,plus);
+                    columnName = x[i].Substring(0, plus);
 
                     query += columnName;
 
-                    if (i!= x.Length-1)
+                    if (i != x.Length - 1)
                     {
                         query += ",";
                     }
@@ -826,18 +732,18 @@ WHERE
 
                 for (int i = 0; i < x.Length; i++)
                 {
-                     plus = x[i].IndexOf("+");
-                     columnName = x[i].Substring(0, plus);
-                     columnValue = x[i].Substring(plus+1, x[i].Length-plus-1);
-                     columnType= AppsHelper.ReturnValue(@"SELECT DATA_TYPE 
+                    plus = x[i].IndexOf("+");
+                    columnName = x[i].Substring(0, plus);
+                    columnValue = x[i].Substring(plus + 1, x[i].Length - plus - 1);
+                    columnType = AppsHelper.ReturnValue(@"SELECT DATA_TYPE 
 FROM INFORMATION_SCHEMA.COLUMNS
 WHERE 
      TABLE_NAME = '" + TableName + @"' AND 
      COLUMN_NAME = '" + columnName + @"'
 ");
-                    if (columnType=="char" || columnType == "varchar" || columnType == "date" || columnType == "time")
+                    if (columnType == "char" || columnType == "varchar" || columnType == "date" || columnType == "time")
                     {
-                        query += "'"+columnValue+"'";
+                        query += "'" + columnValue + "'";
                     }
                     else if (columnType == "nchar" || columnType == "nvarchar")
                     {
@@ -845,7 +751,7 @@ WHERE
                     }
                     else
                     {
-                        query +=  columnValue ;
+                        query += columnValue;
                     }
 
                     if (i != x.Length - 1)
@@ -858,17 +764,17 @@ WHERE
 
                 SendQuery(query);
             }
-            catch 
+            catch
             {
                 MessageBox.Show("E90");
-                
+
             }
         }
-        public static void UpdateQuery(string TableName,params string[] x)
+        public static void UpdateQuery(string TableName, params string[] x)
         {
             try
             {
-                string query = "update "+TableName+" set ";
+                string query = "update " + TableName + " set ";
 
                 string columnName;
                 string columnValue;
@@ -887,7 +793,7 @@ WHERE
      COLUMN_NAME = '" + columnName + @"'
 ");
 
-                    query += columnName + "=";
+                    query += columnName + " =";
 
                     if (columnType == "char" || columnType == "varchar" || columnType == "date" || columnType == "time")
                     {
@@ -904,11 +810,11 @@ WHERE
 
 
 
-                    if (i<x.Length-2)
+                    if (i < x.Length - 2)
                     {
                         query += ",";
                     }
-                    else if (i==x.Length-2)
+                    else if (i == x.Length - 2)
                     {
                         query += " where ";
                     }
@@ -920,7 +826,7 @@ WHERE
             catch
             {
                 MessageBox.Show("E110");
-              
+
             }
         }
         public static string ConvertToArabic(long x)
@@ -931,7 +837,7 @@ WHERE
                 CurrencyInfo c = new CurrencyInfo(CurrencyInfo.Currencies.Syria);
                 return t.ConvertToArabic(x, c);
             }
-            catch 
+            catch
             {
                 return "-";
             }
@@ -940,7 +846,7 @@ WHERE
         {
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();
             saveFileDialog1.Filter = "BAK Files|*.bak";
-            if (saveFileDialog1.ShowDialog()==DialogResult.OK)
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 AppsHelper.SendQuery(@"BACKUP DATABASE [Mall] 
                                 TO  DISK = N'" + saveFileDialog1.FileName + @"' 
@@ -1006,11 +912,11 @@ WHERE
             string x = DateTime.Parse(ReturnValue("select getDate()")).ToString("hh:mm:ss tt");
             return x;
         }
-        public static void NewHistory(string k,string Details)
+        public static void NewHistory(string userName,string k, string Details)
         {
             try
             {
-                InsertQuery("History","UserName+"+userName,"k+"+k,"Details+"+Details,"Date+"+GetDate_Server_SQL(),"Time+"+GetTime_Server());
+                InsertQuery("History", "UserName+" + userName, "k+" + k, "Details+" + Details, "Date+" + GetDate_Server_SQL(), "Time+" + GetTime_Server());
             }
             catch
             {
@@ -1021,11 +927,11 @@ WHERE
         {
             try
             {
-                string RoleName = ReturnValue("select RoleName from Roles where R='"+R+"'");
-                string x = ReturnValue("select "+R+" from Users where userName=N'"+userName+"'");
-                if (string.IsNullOrEmpty(x) || x=="False")
+                string RoleName = ReturnValue("select RoleName from Roles where R='" + R + "'");
+                string x = ReturnValue("select " + R + " from Users where userName=N'" + userName + "'");
+                if (string.IsNullOrEmpty(x) || x == "False")
                 {
-                    MessageBox.Show("ليس لديك الصلاحية "+RoleName);
+                    MessageBox.Show("ليس لديك الصلاحية " + RoleName);
                     return false;
                 }
                 else
@@ -1038,6 +944,276 @@ WHERE
                 MessageBox.Show("E200");
                 return false;
             }
+        }
+        public static void SendSMS(string message, string from, string to)
+        {
+            try
+            {
+                string go = "https://bms.syriatel.sy/API/SendSMS.aspx?user_name=" + "" + "&password=" + "" + "&msg=" + message + "&sender=" + from + "&to=" + to;
+                HttpWebRequest myReq = (HttpWebRequest)WebRequest.Create(go);
+                HttpWebResponse myResp = (HttpWebResponse)myReq.GetResponse();
+                System.IO.StreamReader respStreamReader = new System.IO.StreamReader(myResp.GetResponseStream());
+                string responseString = respStreamReader.ReadToEnd();
+                respStreamReader.Close();
+                myResp.Close();
+            }
+            catch
+            {
+
+
+            }
+        }
+        public static void SendSMS_Modem(string message, string to)
+        {
+
+            try
+            {
+                ListBox portCB = new ListBox();
+                portCB.Items.AddRange(SerialPort.GetPortNames());
+                SerialPort s = new SerialPort();
+            g:;
+                for (int i = 0; i < portCB.Items.Count; i++)
+                {
+                    s.PortName = portCB.Items[i].ToString();
+                    s.BaudRate = 9600;
+                    try
+                    {
+                        s.Open();
+                        s.Close();
+                    }
+                    catch
+                    {
+                        portCB.Items.RemoveAt(i);
+                        goto g;
+
+                    }
+
+                }
+
+
+                GsmCommMain comm = new GsmCommMain(portCB.Text, 9600, 150);
+                comm.Open();
+
+                SmsSubmitPdu pdu;
+                byte dcs = (byte)DataCodingScheme.GeneralCoding.Alpha16Bit;
+
+
+                try
+                {
+                    pdu = new SmsSubmitPdu(message, to, dcs);
+                    comm.SendMessage(pdu, true);
+                }
+                catch (Exception ex)
+                {
+                }
+
+
+                comm.Close();
+
+
+            }
+            catch (Exception ex)
+            {
+            }
+
+
+        }
+        public static void Export(DataGridView dgv)
+        {
+            eiad.Application a = new eiad.Application();
+            eiad.Workbook w = a.Workbooks.Add();
+            eiad.Worksheet s = w.ActiveSheet;
+
+            for (int i = 0; i < dgv.Columns.Count; i++)
+            {
+                s.Cells[1, i + 1] = dgv.Columns[i].HeaderText;
+            }
+
+            for (int i = 0; i < dgv.Rows.Count; i++)
+            {
+                for (int j = 0; j < dgv.Columns.Count; j++)
+                {
+                    s.Cells[i + 2, j + 1] = dgv.Rows[i].Cells[j].Value.ToString();
+                }
+            }
+
+
+            a.Visible = true;
+        }
+        public static void BarCode(string Data, PictureBox p)
+        {
+            p.SizeMode = PictureBoxSizeMode.StretchImage;
+            BarcodeWriter w = new BarcodeWriter();
+            w.Format = BarcodeFormat.CODE_128;
+            p.Image = w.Write(Data);
+        }
+        public static void QR(string Data, QrCodeImgControl p)
+        {
+            p.SizeMode = PictureBoxSizeMode.StretchImage;
+            p.Text = Data;
+        }
+        public static void FindReplace(Word.Document oDoc, string documentLocation, string findText, string replaceText)
+        {
+            var range = oDoc.Range();
+            range.Find.Execute(FindText: findText, Replace: Word.WdReplace.wdReplaceAll, ReplaceWith: replaceText);
+            var shapes = oDoc.Shapes;
+            foreach (Word.Shape shape in shapes)
+            {
+                var initialText = shape.TextFrame.TextRange.Text;
+                var resultingText = initialText.Replace(findText, replaceText);
+                shape.TextFrame.TextRange.Text = resultingText;
+            }
+        }
+        public static void SaveText(TextBox tbs)
+        {
+            try
+            {
+                SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+                saveFileDialog1.Filter = "TXT Files|*.txt";
+                if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    using (StreamWriter sw = File.CreateText(saveFileDialog1.FileName))
+                        sw.Write(tbs.Text);
+                    MessageBox.Show("تم الحفظ بنجاح");
+                }
+            }
+            catch
+            {
+                MessageBox.Show("الرجاء قم بتغيير اسم الملف");
+            }
+        }
+        public static void Insert_Image(string path, string PID)
+        {
+            try
+            {
+                SqlConnection connection = new SqlConnection();
+                connection.ConnectionString = cs;
+                FileStream fs;
+                fs = new FileStream(@path, FileMode.Open, FileAccess.Read);
+                byte[] picbyte = new byte[fs.Length];
+                fs.Read(picbyte, 0, System.Convert.ToInt32(fs.Length));
+                fs.Close();
+                connection.Open();
+                string query;
+                query = "update Products set pic=@pic where PID=" + PID;
+                SqlParameter picparameter = new SqlParameter();
+                picparameter.SqlDbType = SqlDbType.Image;
+                picparameter.ParameterName = "pic";
+                picparameter.Value = picbyte;
+                SqlCommand cmd = new SqlCommand(query, connection);
+                cmd.Parameters.Add(picparameter);
+                cmd.ExecuteNonQuery();
+                connection.Close();
+            }
+            catch
+            {
+            }
+        }
+        public static void Read_Image1(string query, PictureBox p)
+        {
+            try
+            {
+                SqlConnection connection = new SqlConnection();
+                connection.ConnectionString = cs;
+                p.SizeMode = PictureBoxSizeMode.StretchImage;
+                SqlCommand cc = new SqlCommand(query, connection);
+                SqlDataAdapter adapter = new SqlDataAdapter(cc);
+                DataSet ds = new DataSet("MyImages");
+                byte[] MyData = new byte[0];
+                adapter.Fill(ds, "MyImages");
+                DataRow myRow;
+                myRow = ds.Tables["MyImages"].Rows[0];
+                MyData = (byte[])myRow["Pic"];
+                MemoryStream stream = new MemoryStream(MyData);
+                p.Image = Image.FromStream(stream);
+
+
+            }
+            catch (Exception ex)
+            {
+                //MessageBox.Show(ex.Message);
+            }
+        }
+        public static void Read_Image2(string query, PictureBox p)
+        {
+            try
+            {
+                SqlConnection connection = new SqlConnection();
+                connection.ConnectionString = cs;
+                p.SizeMode = PictureBoxSizeMode.StretchImage;
+                SqlCommand cc = new SqlCommand(query, connection);
+                SqlDataAdapter adapter = new SqlDataAdapter(cc);
+                DataSet ds = new DataSet("MyImages");
+                byte[] MyData = new byte[0];
+                adapter.Fill(ds, "MyImages");
+                DataRow myRow;
+                myRow = ds.Tables["MyImages"].Rows[0];
+                MyData = (byte[])myRow["Pic2"];
+                MemoryStream stream = new MemoryStream(MyData);
+                p.Image = Image.FromStream(stream);
+
+
+            }
+            catch
+            {
+            }
+        }
+        public static void Insert_Image2(string path, string PID)
+        {
+            try
+            {
+                SqlConnection connection = new SqlConnection();
+                connection.ConnectionString = cs;
+                FileStream fs;
+                fs = new FileStream(@path, FileMode.Open, FileAccess.Read);
+                byte[] picbyte = new byte[fs.Length];
+                fs.Read(picbyte, 0, System.Convert.ToInt32(fs.Length));
+                fs.Close();
+                connection.Open();
+                string query;
+                query = "update Products set pic2=@pic2 where PID=" + PID;
+                SqlParameter picparameter = new SqlParameter();
+                picparameter.SqlDbType = SqlDbType.Image;
+                picparameter.ParameterName = "pic2";
+                picparameter.Value = picbyte;
+                SqlCommand cmd = new SqlCommand(query, connection);
+                cmd.Parameters.Add(picparameter);
+                cmd.ExecuteNonQuery();
+                connection.Close();
+            }
+            catch
+            {
+            }
+        }
+        public static string GetNowTime()
+        {
+            string a = DateTime.Now.ToString("hh:mm:ss tt");
+            if (a.Contains("ص"))
+            {
+                a = a.Replace("ص", "AM");
+            }
+            else if (a.Contains("م"))
+            {
+                a = a.Replace("م", "PM");
+            }
+            return a;
+        }
+        public static string GetNowDate()
+        {
+            return DateTime.Now.ToString("MM/dd/yyyy");
+        }
+        public static string GetNowDate_SQL()
+        {
+            return DateTime.Now.ToString("yyyy/MM/dd");
+        }
+        public static string GetNowHijireDate()
+        {
+            DateTime d = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
+            HijriCalendar ca = new HijriCalendar();
+            string a = ca.GetDayOfMonth(d).ToString();
+            string b = ca.GetMonth(d).ToString();
+            string c = ca.GetYear(d).ToString();
+            return DateTime.Now.ToString(a + "/" + b + "/" + c);
         }
     }
 }
